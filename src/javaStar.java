@@ -6,6 +6,12 @@ public class javaStar {
         triangle();
         System.out.println();
         triangle2();
+        System.out.println();
+        pyramid();
+        System.out.println();
+        invertedPyramid();
+        System.out.println();
+        diamond();
     }
 
     private static void pattern(){
@@ -34,4 +40,23 @@ public class javaStar {
             System.out.println();
         }
     }
+
+    public static void pyramid(){
+        int n = 5;
+
+        for(int i = 1; i <= n; i++) {
+
+            for(int j = i; j < n; j++) {
+                System.out.print(" ");
+            }
+
+            for(int k = 1; k <= (2*i-1); k++) {
+                System.out.print("*");
+            }
+
+            System.out.println();
+        }
+    }
+
+
 }
