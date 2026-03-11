@@ -4,7 +4,7 @@ public class arrayCreation {
 
     public static void main(String[] args) {
 
-        //array(new int[]{11, 22, 33, 44, 55});
+        array(new int[]{11, 22, 33, 44, 55});
 
         maxVal(new int[]{ 111, 22, 33, 474, 55 });
 
