@@ -1,3 +1,5 @@
+package Day01;
+
 public class Activity04 {
     public static void main(String[] args) {
         loop();
