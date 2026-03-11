@@ -5,25 +5,20 @@ import java.util.Scanner;
 public class Temperature {
 
     public static void main(String[] args) {
+
         welcome();
 
-        System.out.println("1.  to covert Celsius to Fahrenheit press 1" );
+        Scanner input = new Scanner(System.in);
 
-        System.out.println( "2.  to covert Fahrenheit to Celsius press 2");
-
-        Scanner sc = new Scanner(System.in);
-
-        int option = sc.nextInt();
+        int option = input.nextInt();
 
         if (option == 1){
             System.out.println("Enter Your Celsius Temperature :");
-            Scanner input = new Scanner(System.in);
             float temp = input.nextFloat();
             System.out.println(temp + celsiusToFahrenheit(temp));
 
         } else if (option ==2){
             System.out.println("Enter Your Fahrenheit Temperature :");
-            Scanner input = new Scanner(System.in);
             float temp = input.nextFloat();
             System.out.println(temp + FahrenheitCelsiuses(temp));
 
@@ -31,12 +26,15 @@ public class Temperature {
             System.out.println("Invalid input");
         };
 
-
-
     }
+
     public static void welcome(){
 
         System.out.println("Welcome to Temp convertor ");
+
+        System.out.println("1.  to covert Celsius to Fahrenheit press 1" );
+
+        System.out.println( "2.  to covert Fahrenheit to Celsius press 2");
     }
 
     public static float celsiusToFahrenheit (float temp ){
@@ -47,7 +45,7 @@ public class Temperature {
 
     public static float FahrenheitCelsiuses(float temp ){
 
-        return (temp -32) *5/9 ;
+        return (temp - 32) *5/9 ;
 
     }
 }
