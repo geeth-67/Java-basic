@@ -24,7 +24,7 @@ public class Temperature {
 
         }else{
             System.out.println("Invalid input");
-        };
+        }
 
     }
 
