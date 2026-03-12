@@ -1,3 +1,5 @@
+package Day02;
+
 public class javaStar {
 
     public static void main(String[] args) {
