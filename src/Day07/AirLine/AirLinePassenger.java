@@ -1,4 +1,4 @@
-package Day07;
+package Day07.AirLine;
 
 public class AirLinePassenger implements Comparable<AirLinePassenger>{
 
@@ -11,8 +11,8 @@ public class AirLinePassenger implements Comparable<AirLinePassenger>{
     }
 
     @Override
-    public int compareTo(AirLinePassenger o) {
-        return Integer.compare(o.loyaltyPoints , this.loyaltyPoints);
+    public int compareTo(AirLinePassenger a) {
+        return Integer.compare(a.loyaltyPoints , this.loyaltyPoints);
     }
 
     @Override
