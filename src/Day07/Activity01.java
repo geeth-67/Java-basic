@@ -2,12 +2,11 @@ package Day07;
 
 import Day06.Node;
 
-public class Main {
+public class Activity01 {
 
     public static void main(String[] args) {
 
         Node n = new Node(10);
-
         Node n2 = new Node(20);
         Node n3 = new Node(30);
 
