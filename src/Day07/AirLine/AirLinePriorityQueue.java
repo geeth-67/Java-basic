@@ -49,6 +49,7 @@ public class AirLinePriorityQueue {
                         System.out.println("No passenger in queue");
                     }
             }
+
         }
 
     }
