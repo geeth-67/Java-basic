@@ -1,9 +1,77 @@
 package Day08.HashMapImplementations;
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
+
+
 public class AttendanceTracker {
 
     public static void main(String[] args) {
 
-        Student dinal = new Student("Dinal");
+        Scanner sc = new Scanner(System.in);
+
+        Map<String, Student> studentMap = new HashMap<>();
+
+        while (true) {
+            System.out.println("Student attendance system");
+
+            System.out.println("Press 1 to Add Student");
+            System.out.println("Press 2 to mark Attendance");
+
+            String choice = sc.nextLine();
+
+            switch (choice) {
+
+                case "1":
+
+                    System.out.println("Enter Student ID : ");
+                    String studentID = sc.next();
+
+                    if (studentMap.containsKey(studentID)) {
+                        System.out.println("Student is already registered - ID " + studentID);
+
+                    } else {
+                        System.out.println("Enter student name : ");
+                        String name = sc.next();
+                        studentMap.put(studentID, new Student(name));    // create student using Student object
+
+                        break;
+                    }
+
+                case "2":
+                    System.out.println("Marking attendance for th day..... ");
+                    for (Map.Entry<String , Student> entry : studentMap.entrySet()){
+
+                        System.out.println(" " + entry.getKey() + " " + "is Present y/n ");
+                        boolean isPresent = sc.next().equals("y");
+                        entry.getValue().attendance.add(isPresent);
+
+                        break;
+                    }
+
+                case "3":
+
+                    System.out.println("Get student attendance in ID....");
+                    String stID = sc.next();
+                    Student s =studentMap.get(stID);
+
+                    if (s != null) {
+                        for (boolean attendance : s.attendance) {
+
+                            if (attendance) {
+                                System.out.println("present");
+
+                            }else {
+                                System.out.println("absent");
+                            }
+                        }
+                    }else {
+                        System.out.println("Student id not found");
+                    }
+
+                    break;
+            }
+        }
     }
 }
