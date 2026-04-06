@@ -8,6 +8,8 @@ public class Main {
          BinarySearchTres bst = new BinarySearchTres();
 
          bst.insert(10) ;
+         bst.insert(20);
+         bst.insert(30);
 
     }
 }
