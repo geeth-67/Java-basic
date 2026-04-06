@@ -13,7 +13,20 @@ public class AttendanceTracker {
 
         Map<String, Student> studentMap = new HashMap<>();
 
+        studentMap.put("1" , new Student("kamal"));
+        studentMap.put("2" , new Student("ajith"));
+        studentMap.put("3" , new Student("anura"));
+
+        studentMap.get("1").attendance.add(true);
+        studentMap.get("1").attendance.add(true);
+        studentMap.get("1").attendance.add(true);
+        studentMap.get("1").attendance.add(false);
+
+        studentMap.get("2").attendance.add(true);
+        studentMap.get("2").attendance.add(false);
+
         while (true) {
+
             System.out.println("Student attendance system");
 
             System.out.println("Press 1 to Add Student");
