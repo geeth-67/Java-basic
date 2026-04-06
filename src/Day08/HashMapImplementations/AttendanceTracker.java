@@ -95,7 +95,7 @@ public class AttendanceTracker {
                         int count = 0;
 
                         for (boolean atd : std.attendance) {
-                            if ( !atd) {
+                            if ( ! atd) {
                                 count ++ ;
                             }
                         }
