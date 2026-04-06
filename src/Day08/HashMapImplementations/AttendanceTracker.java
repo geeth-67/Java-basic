@@ -11,8 +11,9 @@ public class AttendanceTracker {
 
         Scanner sc = new Scanner(System.in);
 
-        Map<String, Student> studentMap = new HashMap<>();
+        Map < String, Student > studentMap = new HashMap<>();
 
+        // student add without terminal using
         studentMap.put("1" , new Student("kamal"));
         studentMap.put("2" , new Student("ajith"));
         studentMap.put("3" , new Student("anura"));
@@ -31,6 +32,8 @@ public class AttendanceTracker {
 
             System.out.println("Press 1 to Add Student");
             System.out.println("Press 2 to mark Attendance");
+            System.out.println("Press 3 to get Attendance");
+            System.out.println("Press 4 to get 2 more days absent student");
 
             String choice = sc.nextLine();
 
@@ -49,8 +52,8 @@ public class AttendanceTracker {
                         String name = sc.next();
                         studentMap.put(studentID, new Student(name));    // create student using Student object
 
-                        break;
                     }
+                    break;
 
                 case "2":
                     System.out.println("Marking attendance for th day..... ");
@@ -60,12 +63,12 @@ public class AttendanceTracker {
                         boolean isPresent = sc.next().equals("y");
                         entry.getValue().attendance.add(isPresent);
 
-                        break;
                     }
+                    break;
 
                 case "3":
 
-                    System.out.println("Get student attendance in ID....");
+                    System.out.println("Get student attendance in ID : ");
                     String stID = sc.next();
                     Student s =studentMap.get(stID);
 
@@ -82,7 +85,24 @@ public class AttendanceTracker {
                     }else {
                         System.out.println("Student id not found");
                     }
+                    break;
 
+                case "4":
+
+                    System.out.println("Student follow up !");
+
+                    for (Student std : studentMap.values()) {
+                        int count = 0;
+
+                        for (boolean atd : std.attendance) {
+                            if ( !atd) {
+                                count ++ ;
+                            }
+                        }
+                        if (count > 2) {
+                            System.out.println("please follow up on - " + std.name);
+                        }
+                    }
                     break;
             }
         }
