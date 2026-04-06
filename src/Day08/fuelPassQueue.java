@@ -11,42 +11,38 @@ public class fuelPassQueue {
 
         Scanner sc = new Scanner(System.in);
 
-        Deque<fuelQueue> fuel_list = new ArrayDeque<>() {};
+        Deque<String> fuelQueue = new ArrayDeque<>();
 
         while (true) {
 
             System.out.println("Fuel Queue");
 
             System.out.println("Press 1 to Add a Vehicle");
-            System.out.println("Press 2 to get Highest priority Vehicle");
+            System.out.println("Press 2 to add Vehicle to the start of the queue");
+            System.out.println("Press 3 to View Vehicle");
 
             String choice = sc.nextLine();
+            String vehicleNum;
 
-            switch (choice){
+            switch (choice) {
                 case "1":
 
-                    System.out.println("User Pressed 1");
-
-                    System.out.println("Enter your vehicle id : ");
-                    int vehicleId = Integer.parseInt(sc.nextLine());
-
-                    System.out.println("Enter your priority : ");
-                    int priority = Integer.parseInt(sc.nextLine());
-
-                    fuelQueue vehicle = new fuelQueue(vehicleId , priority);
-                    fuel_list.offer(vehicle);
+                    System.out.println("Enter vehicle number : ");
+                    vehicleNum = sc.next();
+                    fuelQueue.offer(vehicleNum);
 
                     break;
 
                 case "2":
 
-                    fuelQueue higherPriorityVehicle = fuel_list.poll();
-                    if (higherPriorityVehicle != null) {
-                        System.out.println("passenger Name - " + higherPriorityVehicle.ticketId + "Points - " + higherPriorityVehicle.priority);
-                    }else {
-                        System.out.println("No passenger in queue");
-                    }
+                    System.out.println("Enter vehicle number : ");
+                    vehicleNum = sc.next();
+                    fuelQueue.offerFirst(vehicleNum);
+                    break;
 
+                case "3":
+
+                    System.out.println(fuelQueue);
             }
         }
     }
