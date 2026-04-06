@@ -13,6 +13,7 @@ public class AttendanceTracker {
 
         Map<String, Student> studentMap = new HashMap<>();
 
+        // student add without terminal using
         studentMap.put("1" , new Student("kamal"));
         studentMap.put("2" , new Student("ajith"));
         studentMap.put("3" , new Student("anura"));
