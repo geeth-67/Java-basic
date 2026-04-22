@@ -48,4 +48,49 @@ public class BinarySearchTres {
 
         return node;
     }
+
+    public void inOrder () {
+        inOrderHelper(root);
+    }
+
+    public void inOrderHelper (Node node) {
+
+        if (node == null) {
+            return;
+        }
+
+        inOrderHelper(node.left);
+        System.out.println(node.data + " ");
+        inOrderHelper(node.right);
+    }
+
+    public void preOrder() {
+        preOrderHelper(root);
+    }
+
+    public void preOrderHelper (Node node) {
+
+        if (node == null) {
+            return;
+        }
+
+        System.out.println(node.data + " ");
+        preOrderHelper(node.left);
+        preOrderHelper(node.right);
+    }
+
+    public void postOrder() {
+        postOrderHelper(root);
+    }
+
+    public void postOrderHelper (Node node) {
+
+        if (node == null) {
+            return;
+        }
+
+        postOrderHelper(node.left);
+        postOrderHelper(node.right);
+        System.out.println(node.data + " ");
+    }
 }
